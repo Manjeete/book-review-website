@@ -1,4 +1,3 @@
-from . import os
 from flask import Flask, session, render_template, request, url_for,redirect,flash
 from flask_session import Session
 from sqlalchemy import create_engine
