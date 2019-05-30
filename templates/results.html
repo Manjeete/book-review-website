@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+{% include 'includes/navbar3.html' %}
+{% block body %}
+ <hr class="bg-light">
+ <h2 class="text-white">Results</h2>
+ <div class="row">
+ 	{% for r in result %}
+	 	<div class="col-md-6">
+	 		 <div class="card border-success mb-3" style="max-width:100%;">
+			  <div class="card-header text-center bg-transparent border-success">{{ r.title }}</div>
+			  <div class="card-body text-center text-info">
+			    <h4><a href="{{ url_for('details',book_id=r.id) }}" class="btn">click here to know more</a></h4>
+			  </div>
+			  <div class="card-footer text-center bg-transparent border-success">{{ r.author }}</div>
+			</div>
+	 	</div>
+ 	{% endfor %}
+ </div>
+
+{% endblock%}

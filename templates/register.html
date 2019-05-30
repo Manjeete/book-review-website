@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+{% include 'includes/_navbar.html' %}
+{% block body %}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8"><img src="static/book2.jpg" alt=""></div>
+    <div class="col-sm-4">
+    	<h2>Register Here !!</h2>
+    	<form action="{{url_for('register')}}" method="POST" class="textclReg">
+    		<div class="form-group ">
+    			<label for="exampleInputName">Name</label>
+    			<input type="text" name="name" class="form-control" id="exampleInputName" placeholder="Enter your name" required>
+  			</div>
+  			<div class="form-group">
+    			<label for="exampleInputUsername">Username</label>
+    			<input type="text" name="username" class="form-control" id="exampleInputUsername" placeholder="Username" required>
+  			</div>
+  			<div class="form-group">
+    			<label for="exampleInputEmail1">Email address</label>
+    			<input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
+    			<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  			</div>
+  			<div class="form-group">
+    			<label for="exampleInputPassword1">Password</label>
+    			<input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+  			</div>
+  			<!-- <div class="form-group form-check">
+    			<input type="checkbox" class="form-check-input" id="exampleCheck1">
+    			<label class="form-check-label" for="exampleCheck1">Check me out</label>
+  			</div> -->
+  			<button type="submit" class="btn btn-primary">Submit</button>
+  			<p>Already a user ? <a href="login">Login</a></p>
+		</form>
+    	
+    </div>
+  </div>
+</div>
+{% endblock %}
+

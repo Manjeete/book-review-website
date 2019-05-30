@@ -1,0 +1,70 @@
+{% extends 'layout.html' %}
+{% include 'includes/navbar3.html' %}
+{% block body%}
+ <hr class="bg-light">
+ <h2 class="text-white">Details</h2>
+ <div class="container">
+ 	{% for b in b_result %}
+ 	<div class="row">
+ 		<div class="col-md-12">
+ 			<div class="card mb-3" style="max-width:100%;">
+			  <div class="row no-gutters">
+			    <div class="col-md-4 text-center" style="padding-top:50px;font-size:25px;">
+			      {{ b.author }}
+			    </div>
+			    <div class="col-md-8">
+			      <div class="card-body">
+			        <h4 class="card-title mb-4">{{ b.title }}</h4>
+			        <h6><strong>ISBN:</strong> {{ b.isbn }}</h6>
+			        <h6><strong>PUBLISHED:</strong> {{ b.year }}</h6>
+			        <h6><strong>TOTAL REVIEWS:</strong> {{ total_r }}</h6>
+			        <h6><strong>AVERAGE:</strong> {{ avg_r }}</h6>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<!-- User reviews area -->
+					<form action="{{ url_for('user_reviews',book_id=b.id) }}" method="post">
+                          <input class="input" type="text" name="review" placeholder="Write Your Reviews..." required>
+                          <div class="rate">
+                            <input type="radio" id="star5" name="rating" value="5" required />
+                            <label for="star5" title="text">5 stars</label>
+                            <input type="radio" id="star4" name="rating" value="4" required />
+                            <label for="star4" title="text">4 stars</label>
+                            <input type="radio" id="star3" name="rating" value="3" required />
+                            <label for="star3" title="text">3 stars</label>
+                            <input type="radio" id="star2" name="rating" value="2" required />
+                            <label for="star2" title="text">2 stars</label>
+                            <input type="radio" id="star1" name="rating" value="1" required />
+                            <label for="star1" title="text">1 star</label>
+                        </div>
+                        <input type="hidden" name="username" value="{{ username }}">
+                        <button class="button float-right" type="sumbit">Add Review</button>
+                    </form>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 text-white">
+					<!-- Printing flash message from backend to check if user is already reviewed or not -->
+					 {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                        <!-- using messages[0] because messages is a list and we want to print it's first item -->
+                         <p> {{ messages[0] }}</p>
+                        {% endif %}
+                      {% endwith %}
+                      <!-- Printing all reviews from different users -->
+					{% for r in reviews %}
+					<strong><h5 class="text-primary">{{ r.r_user}}</h5></strong>
+			        <p>user rating: {{ r.rating }}</p>
+					<p class="ml-4">{{ r.review}}</p>
+					<hr class="bg-light">
+					{% endfor %}
+				</div>
+			</div>
+ 		</div>
+ 	</div>
+ 	{% endfor%}
+ </div> 
+{% endblock%}

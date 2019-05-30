@@ -1,0 +1,107 @@
+/* for layout.hmtl */
+body{
+
+	background:#2E2D29;
+}
+/* for _navbar.html */
+
+.cont {
+	background: #080601;
+background: -webkit-linear-gradient(top left, #080601, #0BDAD8);
+background: -moz-linear-gradient(top left, #080601, #0BDAD8);
+background: linear-gradient(top left, #080601, #0BDAD8);
+font-size: 17px;
+height: 60px;
+padding-top: 5px;
+font-weight:bold;
+
+
+}
+/* for font Dashboard property in _navbar.html */
+.dash{
+	font-size: 29px;
+	font-weight:bold;
+	color:white;
+}
+
+.fl{
+	color:white;
+}
+/* text color in rgister.html */
+.textclReg{
+	color:white;
+}
+/* form Login in register */
+h2{
+	color:white;
+	font-family:san-serif;
+	font-weight:bold;
+}
+/* for login.html */
+#login{
+	margin-top:100px;
+}
+/* image attribute in register.html */
+img{
+	height:594px;
+	width:121%;
+	float:right;
+}
+/*Rating area css*/
+.input{
+  width:100%;
+  padding:10px 0;
+  margin-bottom: 30px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: #fff;
+  outline: none;
+  background-color: transparent;
+  border:none;
+  border-bottom: 1px solid black;
+}
+.button{
+ background:transparent;
+  border:none;
+  outline: none;
+  margin-bottom: 100px;
+  color:#fff;
+  background-color:#03a9f4;
+  padding:10px 20px;
+  border-radius: 10px;
+}
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
