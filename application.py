@@ -1,3 +1,4 @@
+import os
 from flask import Flask, session, render_template, request, url_for,redirect,flash
 from flask_session import Session
 from sqlalchemy import create_engine
@@ -7,8 +8,8 @@ app=Flask(__name__)
 DATABASE_URL="postgres://cdmekxoqflindy:23bb78e306e10865549be635b880e628373d2016e617e3f660483bbfcf5c222d@ec2-54-83-50-174.compute-1.amazonaws.com:5432/ddm76rg8a80b6j"
 
 # Check for environment variable
-if not os.getenv("DATABASE_URL"):
-    raise RuntimeError("DATABASE_URL is not set")
+# if not os.getenv("DATABASE_URL"):
+#     raise RuntimeError("DATABASE_URL is not set")
 
 # Configure session to use filesystem
 app.config["SESSION_PERMANENT"] = False
