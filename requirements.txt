@@ -3,4 +3,4 @@ gunicorn
 flask
 flask_session
 sqlalchemy
-Werkzeug
+psycopg2-binary
