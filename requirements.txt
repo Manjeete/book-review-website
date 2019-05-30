@@ -3,4 +3,3 @@ gunicorn
 flask
 flask_session
 sqlalchemy
-os
