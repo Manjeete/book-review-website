@@ -1,1 +1,2 @@
-web: gunicorn hello:app --preload
+web: gunicorn application:app --preload
+heroku ps:scale web=1
