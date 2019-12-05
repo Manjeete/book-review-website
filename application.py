@@ -7,9 +7,9 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 app=Flask(__name__)
 DATABASE_URL="postgres://eaggqrlwacukhg:1da400a2b48765cf5616b5284e3a833c1b6db80ffdc80a9d1cc9233d4e00a2c7@ec2-107-20-230-70.compute-1.amazonaws.com:5432/d1immff20judvu"
 
-# Check for environment variable
-if not os.getenv(DATABASE_URL):
-    raise RuntimeError("DATABASE_URL is not set")
+# # Check for environment variable
+# if not os.getenv(DATABASE_URL):
+#     raise RuntimeError("DATABASE_URL is not set")
 
 # Configure session to use filesystem
 app.config["SESSION_PERMANENT"] = False
