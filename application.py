@@ -3,6 +3,7 @@ from flask import Flask, session, render_template, request, url_for,redirect,fla
 from flask_session import Session
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
+import requests
 
 app=Flask(__name__)
 DATABASE_URL="postgres://eaggqrlwacukhg:1da400a2b48765cf5616b5284e3a833c1b6db80ffdc80a9d1cc9233d4e00a2c7@ec2-107-20-230-70.compute-1.amazonaws.com:5432/d1immff20judvu"
