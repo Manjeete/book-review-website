@@ -31,16 +31,17 @@ def register():
 	username=request.form.get("username")
 	email=request.form.get("email")
 	password=request.form.get("password")
+	
 	check_email = db.execute("SELECT * FROM user_info WHERE email= :email",{"email":email}).fetchone()
-	check_password = db.execute("SELECT * FROM user_info WHERE password= :password",{"password":password}).fetchone()
-	if check_email or check_password is None:
+	
+	if check_email is None:
 		db.execute("INSERT INTO user_info(name,username,email,password) VALUES(:name,:username,:email,:password)",
 			{"name":name,"username":username,"email":email,"password":password})
 		db.commit()
-		db.close()
-		return render_template("register.html")
+		db.close()	
+		return render_template("login.html")
 	else:
-		return "Sorry!! Email or Password is already taken!"
+		return "Sorry! An account already exists with this Email address!"
 
 @app.route('/login',methods=["POST","GET"])
 def login():
